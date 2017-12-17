@@ -13,6 +13,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           use: [
             {
@@ -36,6 +37,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
