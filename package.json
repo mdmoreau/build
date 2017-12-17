@@ -5,5 +5,8 @@
     "> 1%",
     "last 2 versions",
     "Firefox ESR"
-  ]
+  ],
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
 }
