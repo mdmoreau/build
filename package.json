@@ -2,6 +2,7 @@
   "name": "build",
   "version": "0.1.0",
   "scripts": {
+    "webpack": "webpack",
     "browser-sync": "browser-sync start",
     "stylelint": "stylelint \"src/css/**/*.css\"",
     "eslint": "eslint \"src/js/**/*.js\""
