@@ -2,6 +2,7 @@
   "name": "build",
   "version": "0.1.0",
   "scripts": {
+    "browser-sync": "browser-sync start",
     "stylelint": "stylelint \"src/css/**/*.css\"",
     "eslint": "eslint \"src/js/**/*.js\""
   },
@@ -10,6 +11,13 @@
     "last 2 versions",
     "Firefox ESR"
   ],
+  "browser-sync": {
+    "files": [
+      "dist/bundle.css",
+      "dist/bundle.js"
+    ],
+    "open": "ui"
+  },
   "stylelint": {
     "extends": "stylelint-config-standard"
   },
@@ -23,6 +31,7 @@
     "@babel/core": "^7.0.0-beta.35",
     "@babel/preset-env": "^7.0.0-beta.35",
     "babel-loader": "^8.0.0-beta.0",
+    "browser-sync": "^2.18.13",
     "css-loader": "^0.28.7",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
