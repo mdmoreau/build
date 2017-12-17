@@ -55,4 +55,5 @@ module.exports = {
       allChunks: true,
     }),
   ],
+  watch: true,
 };
