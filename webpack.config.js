@@ -1,5 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const postcssImport = require('postcss-import');
+const postcssCssnext = require('postcss-cssnext');
 
 module.exports = {
   entry: './src/index',
@@ -15,6 +17,19 @@ module.exports = {
           use: [
             {
               loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: () => [
+                  postcssImport(),
+                  postcssCssnext(),
+                ],
+              },
             },
           ],
         }),
