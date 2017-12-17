@@ -1,6 +1,10 @@
 {
   "name": "build",
   "version": "0.1.0",
+  "scripts": {
+    "stylelint": "stylelint \"src/css/**/*.css\"",
+    "eslint": "eslint \"src/js/**/*.js\""
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
