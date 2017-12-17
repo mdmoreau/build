@@ -6,15 +6,29 @@
     "last 2 versions",
     "Firefox ESR"
   ],
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-airbnb-base",
+    "env": {
+      "browser": true
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.35",
     "@babel/preset-env": "^7.0.0-beta.35",
     "babel-loader": "^8.0.0-beta.0",
     "css-loader": "^0.28.7",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.9",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
     "webpack": "^3.10.0"
   }
 }
