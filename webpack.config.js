@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const NotifierPlugin = require('webpack-notifier');
 const postcssImport = require('postcss-import');
 const postcssCssnext = require('postcss-cssnext');
 
@@ -60,6 +61,7 @@ module.exports = {
       filename: 'bundle.css',
       allChunks: true,
     }),
+    new NotifierPlugin(),
   ],
   watch: true,
 };
