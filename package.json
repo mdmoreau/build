@@ -31,6 +31,7 @@
     }
   },
   "dependencies": {
+    "ally.js": "^1.4.1",
     "normalize.css": "^7.0.0"
   },
   "devDependencies": {

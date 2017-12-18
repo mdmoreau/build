@@ -41,3 +41,6 @@ select,
   cursor: pointer;
 }
 
+html:not([data-focus-source='key']) :focus {
+  outline: 0;
+}
