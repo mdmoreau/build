@@ -6,9 +6,11 @@ const postcssImport = require('postcss-import');
 const postcssCssnext = require('postcss-cssnext');
 
 module.exports = {
-  entry: './src/index',
+  entry: {
+    main: './src/main',
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -21,7 +23,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'bundle.css',
+              name: '[name].css',
             },
           },
           {
@@ -66,8 +68,7 @@ module.exports = {
     new CleanPlugin(['dist']),
     new BrowserSyncPlugin({
       files: [
-        'dist/bundle.css',
-        'dist/bundle.js',
+        'dist/**/*',
       ],
       open: 'ui',
     }, {

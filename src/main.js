@@ -1,5 +1,5 @@
-// bundle.css
+// css
 import './css/main.css';
 
-// bundle.js
+// js
 import './js/main';
