@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "scripts": {
     "webpack": "webpack",
-    "browser-sync": "browser-sync start",
-    "dev": "run-p webpack browser-sync",
     "stylelint": "stylelint \"src/css/**/*.css\"",
     "eslint": "eslint \"src/js/**/*.js\"",
     "lint": "run-s stylelint eslint"
@@ -14,13 +12,6 @@
     "last 2 versions",
     "Firefox ESR"
   ],
-  "browser-sync": {
-    "files": [
-      "dist/bundle.css",
-      "dist/bundle.js"
-    ],
-    "open": "ui"
-  },
   "stylelint": {
     "extends": "stylelint-config-standard"
   },

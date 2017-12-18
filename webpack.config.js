@@ -64,7 +64,6 @@ module.exports = {
     }),
     new BrowserSyncPlugin({
       files: [
-        'index.html',
         'dist/bundle.css',
         'dist/bundle.js',
       ],
