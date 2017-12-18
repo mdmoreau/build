@@ -1,6 +1,5 @@
 const path = require('path');
 const CleanPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const NotifierPlugin = require('webpack-notifier');
 const postcssImport = require('postcss-import');
@@ -18,26 +17,33 @@ module.exports = {
         test: /\.css$/,
         include: path.resolve(__dirname, 'src/css'),
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 1,
-              },
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'bundle.css',
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                ident: 'postcss',
-                plugins: () => [
-                  postcssImport(),
-                  postcssCssnext(),
-                ],
-              },
+          },
+          {
+            loader: 'extract-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
             },
-          ],
-        }),
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                postcssImport(),
+                postcssCssnext(),
+              ],
+            },
+          },
+        ],
       },
       {
         test: /\.js$/,
@@ -58,10 +64,6 @@ module.exports = {
   },
   plugins: [
     new CleanPlugin(['dist']),
-    new ExtractTextPlugin({
-      filename: 'bundle.css',
-      allChunks: true,
-    }),
     new BrowserSyncPlugin({
       files: [
         'dist/bundle.css',
