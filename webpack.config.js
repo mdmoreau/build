@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const NotifierPlugin = require('webpack-notifier');
 const postcssImport = require('postcss-import');
 const postcssCssnext = require('postcss-cssnext');
@@ -60,6 +61,16 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'bundle.css',
       allChunks: true,
+    }),
+    new BrowserSyncPlugin({
+      files: [
+        'index.html',
+        'dist/bundle.css',
+        'dist/bundle.js',
+      ],
+      open: 'ui',
+    }, {
+      reload: false,
     }),
     new NotifierPlugin(),
   ],
