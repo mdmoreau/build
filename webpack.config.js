@@ -1,4 +1,5 @@
 const path = require('path');
+const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const postcssImport = require('postcss-import');
 const postcssCssnext = require('postcss-cssnext');
@@ -54,6 +55,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanPlugin(['dist']),
     new ExtractTextPlugin({
       filename: 'bundle.css',
       allChunks: true,
