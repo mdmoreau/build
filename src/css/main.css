@@ -1,2 +1,9 @@
 /* dependencies */
 @import 'normalize.css';
+
+/* utilities */
+@import 'util/variables';
+@import 'util/base';
+
+/* modules */
+@import 'modules/svg';
