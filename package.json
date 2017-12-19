@@ -16,7 +16,8 @@
     "extends": "stylelint-config-standard",
     "rules": {
       "at-rule-no-unknown": [
-        true, {
+        true,
+        {
           "ignoreAtRules": [
             "define-mixin",
             "mixin"
@@ -52,6 +53,7 @@
     "nunjucks-html-loader": "^1.1.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
+    "postcss-inline-svg": "^3.0.0",
     "postcss-loader": "^2.0.9",
     "postcss-mixins": "^6.2.0",
     "stylelint": "^8.4.0",
