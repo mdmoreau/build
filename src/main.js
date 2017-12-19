@@ -1,3 +1,6 @@
+// html
+import './html/index.html';
+
 // css
 import './css/main.css';
 

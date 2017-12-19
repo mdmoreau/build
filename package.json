@@ -39,6 +39,7 @@
     "extract-loader": "^1.0.1",
     "file-loader": "^1.1.6",
     "npm-run-all": "^4.1.2",
+    "nunjucks-html-loader": "^1.1.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.9",

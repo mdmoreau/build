@@ -16,6 +16,25 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        include: path.resolve(__dirname, 'src/html'),
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].html',
+            },
+          },
+          {
+            loader: 'nunjucks-html-loader',
+            options: {
+              searchPaths: path.resolve(__dirname, 'src/html'),
+            },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
         include: path.resolve(__dirname, 'src/css'),
         exclude: /node_modules/,
@@ -70,6 +89,7 @@ module.exports = {
       files: [
         'dist/**/*',
       ],
+      server: 'dist',
       open: 'ui',
     }, {
       reload: false,
