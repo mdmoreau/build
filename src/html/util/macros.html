@@ -1,0 +1,5 @@
+{% macro svg(img, class = '') %}
+  <span class="svg svg--{{ img }} {{ class }}">
+    {% include img + ".svg" %}
+  </span>
+{% endmacro %}

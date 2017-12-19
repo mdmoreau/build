@@ -30,7 +30,10 @@ module.exports = {
           {
             loader: 'nunjucks-html-loader',
             options: {
-              searchPaths: path.resolve(__dirname, 'src/html'),
+              searchPaths: [
+                path.resolve(__dirname, 'src/html'),
+                path.resolve(__dirname, 'img'),
+              ],
             },
           },
         ],
