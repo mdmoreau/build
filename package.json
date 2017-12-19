@@ -13,7 +13,17 @@
     "Firefox ESR"
   ],
   "stylelint": {
-    "extends": "stylelint-config-standard"
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "at-rule-no-unknown": [
+        true, {
+          "ignoreAtRules": [
+            "define-mixin",
+            "mixin"
+          ]
+        }
+      ]
+    }
   },
   "eslintConfig": {
     "extends": "eslint-config-airbnb-base",
@@ -43,6 +53,7 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.9",
+    "postcss-mixins": "^6.2.0",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0",
     "webpack": "^3.10.0",

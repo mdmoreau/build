@@ -3,6 +3,7 @@ const CleanPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const NotifierPlugin = require('webpack-notifier');
 const postcssImport = require('postcss-import');
+const postcssMixins = require('postcss-mixins');
 const postcssCssnext = require('postcss-cssnext');
 
 module.exports = {
@@ -60,6 +61,7 @@ module.exports = {
               ident: 'postcss',
               plugins: () => [
                 postcssImport(),
+                postcssMixins(),
                 postcssCssnext(),
               ],
             },

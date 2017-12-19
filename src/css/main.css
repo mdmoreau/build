@@ -3,6 +3,7 @@
 
 /* utilities */
 @import 'util/variables';
+@import 'util/mixins';
 @import 'util/base';
 
 /* modules */
