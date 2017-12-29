@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/js'),
   },
   module: {
     rules: [
@@ -25,6 +25,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].html',
+              outputPath: '../',
             },
           },
           {
@@ -47,6 +48,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].css',
+              outputPath: '../css/',
             },
           },
           {
