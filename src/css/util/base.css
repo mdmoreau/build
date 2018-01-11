@@ -34,14 +34,6 @@ textarea {
   font: inherit;
 }
 
-button,
-select,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  cursor: pointer;
-}
-
 html:not([data-focus-source='key']) :focus {
   outline: 0;
 }
