@@ -5,6 +5,7 @@ const NotifierPlugin = require('webpack-notifier');
 const postcssImport = require('postcss-import');
 const postcssMixins = require('postcss-mixins');
 const postcssCssnext = require('postcss-cssnext');
+const postcssInlineSvg = require('postcss-inline-svg');
 
 module.exports = {
   entry: {
@@ -68,6 +69,9 @@ module.exports = {
                 postcssImport(),
                 postcssMixins(),
                 postcssCssnext(),
+                postcssInlineSvg({
+                  path: path.resolve(__dirname, 'img'),
+                }),
               ],
             },
           },
