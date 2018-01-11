@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const NotifierPlugin = require('webpack-notifier');
@@ -12,7 +13,7 @@ module.exports = {
     main: './src/main',
   },
   output: {
-    filename: '[name].js',
+    filename: '[name].min.js',
     path: path.resolve(__dirname, 'dist/js'),
   },
   module: {
@@ -105,6 +106,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      cache: true,
+      parallel: true,
+    }),
     new CleanPlugin(['dist']),
     new BrowserSyncPlugin({
       files: [
