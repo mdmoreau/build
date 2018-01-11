@@ -29,6 +29,7 @@ input,
 optgroup,
 select,
 textarea {
+  border-radius: 0;
   color: inherit;
   font: inherit;
 }
