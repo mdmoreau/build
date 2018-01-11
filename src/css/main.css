@@ -5,6 +5,4 @@
 @import 'util/variables';
 @import 'util/mixins';
 @import 'util/base';
-
-/* modules */
-@import 'modules/svg';
+@import 'util/svg';
