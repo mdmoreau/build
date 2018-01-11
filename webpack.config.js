@@ -30,6 +30,15 @@ module.exports = {
             },
           },
           {
+            loader: 'extract-loader',
+          },
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: true,
+            },
+          },
+          {
             loader: 'nunjucks-html-loader',
             options: {
               searchPaths: [
@@ -48,7 +57,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].css',
+              name: '[name].min.css',
               outputPath: '../css/',
             },
           },
@@ -58,6 +67,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              minimize: true,
               importLoaders: 1,
             },
           },
