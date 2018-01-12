@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "webpack": "webpack",
+    "svgo": "svgo \"img\" --disable removeViewBox --enable removeDimensions",
     "stylelint": "stylelint \"src/css/**/*.css\"",
     "eslint": "eslint \"src/js/**/*.js\"",
     "lint": "run-s stylelint eslint"
@@ -59,6 +60,7 @@
     "postcss-mixins": "^6.2.0",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0",
+    "svgo": "^1.0.3",
     "webpack": "^3.10.0",
     "webpack-notifier": "^1.5.0"
   }
