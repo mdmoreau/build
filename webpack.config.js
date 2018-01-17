@@ -37,6 +37,8 @@ module.exports = {
             loader: 'html-loader',
             options: {
               minimize: true,
+              conservativeCollapse: false,
+              removeAttributeQuotes: false,
             },
           },
           {
