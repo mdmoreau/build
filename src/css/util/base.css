@@ -34,6 +34,6 @@ textarea {
   font: inherit;
 }
 
-html:not([data-focus-source='key']) :focus {
+[data-whatintent='mouse'] :focus {
   outline: 0;
 }
