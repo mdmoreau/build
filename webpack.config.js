@@ -1,8 +1,8 @@
 const path = require('path');
-const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const NotifierPlugin = require('webpack-notifier');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const postcssImport = require('postcss-import');
 const postcssMixins = require('postcss-mixins');
 const postcssCssnext = require('postcss-cssnext');
@@ -70,6 +70,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              url: false,
               minimize: true,
               importLoaders: 1,
             },
@@ -108,10 +109,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      cache: true,
-      parallel: true,
-    }),
     new CleanPlugin(['dist']),
     new BrowserSyncPlugin({
       files: [
@@ -123,6 +120,15 @@ module.exports = {
       reload: false,
     }),
     new NotifierPlugin(),
+    new UglifyJsPlugin({
+      cache: true,
+      parallel: true,
+    }),
   ],
+  mode: 'production',
+  cache: true,
+  optimization: {
+    minimize: false,
+  },
   watch: true,
 };
