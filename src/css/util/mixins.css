@@ -1,3 +1,9 @@
+@define-mixin bg-contain {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 @define-mixin clear {
   &::after {
     content: '';
