@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "webpack": "webpack",
-    "svgo": "svgo \"img\" --disable removeViewBox --enable removeDimensions",
+    "svgo": "svgo \"img\" --disable removeViewBox --enable removeDimensions --multipass",
     "stylelint": "stylelint \"src/css/**/*.css\"",
     "eslint": "eslint \"src/js/**/*.js\"",
     "lint": "run-s stylelint eslint"
