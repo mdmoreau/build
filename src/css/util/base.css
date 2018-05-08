@@ -31,9 +31,9 @@ select,
 textarea {
   border-radius: 0;
   color: inherit;
-  font: inherit;
 }
 
-[data-whatintent='mouse'] :focus {
+[data-whatintent='mouse'] :focus,
+[data-whatintent='touch'] :focus {
   outline: 0;
 }
