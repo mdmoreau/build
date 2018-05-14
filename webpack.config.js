@@ -5,7 +5,7 @@ const NotifierPlugin = require('webpack-notifier');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const postcssImport = require('postcss-import');
 const postcssMixins = require('postcss-mixins');
-const postcssCssnext = require('postcss-cssnext');
+const postcssPresetEnv = require('postcss-preset-env');
 const postcssInlineSvg = require('postcss-inline-svg');
 
 module.exports = {
@@ -82,7 +82,9 @@ module.exports = {
               plugins: () => [
                 postcssImport(),
                 postcssMixins(),
-                postcssCssnext(),
+                postcssPresetEnv({
+                  stage: 0,
+                }),
                 postcssInlineSvg({
                   path: path.resolve(__dirname, 'img'),
                 }),
