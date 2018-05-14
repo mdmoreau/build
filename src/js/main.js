@@ -1,3 +1,5 @@
 // utilities
+import focusWithin from 'focus-within';
 import 'what-input';
-import './util/focus-within';
+
+focusWithin(document);
