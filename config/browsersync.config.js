@@ -5,7 +5,9 @@ module.exports = {
   watchEvents: [
     'add',
     'change',
+    'unlink',
     'addDir',
+    'unlinkDir',
   ],
   server: true,
   open: 'ui',
