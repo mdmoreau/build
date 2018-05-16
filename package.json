@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "webpack": "webpack",
+    "postcss": "postcss \"src/css/*.css\" --dir \"dist/css\" --ext \".min.css\" --no-map --verbose --watch",
     "svgo": "svgo \"img\" --disable removeViewBox --enable removeDimensions --multipass",
     "stylelint": "stylelint \"src/css/**/*.css\"",
     "eslint": "eslint \"src/js/**/*.js\"",
@@ -54,6 +55,8 @@
     "html-loader": "^0.5.5",
     "npm-run-all": "^4.1.3",
     "nunjucks-html-loader": "^1.1.0",
+    "postcss-cli": "^5.0.0",
+    "postcss-csso": "^3.0.0",
     "postcss-import": "^11.1.0",
     "postcss-inline-svg": "^3.1.1",
     "postcss-loader": "^2.1.5",
