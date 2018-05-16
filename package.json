@@ -5,6 +5,7 @@
     "webpack": "webpack",
     "postcss": "postcss \"src/css/*.css\" --dir \"dist/css\" --ext \".min.css\" --config \"config/postcss.config.js\" --no-map --verbose --watch",
     "rollup": "rollup --config \"config/rollup.config.js\" --watch",
+    "browsersync": "browser-sync start --config \"config/browsersync.config.js\"",
     "svgo": "svgo \"img\" --disable removeViewBox --enable removeDimensions --multipass",
     "stylelint": "stylelint \"src/css/**/*.css\"",
     "eslint": "eslint \"src/js/**/*.js\"",
