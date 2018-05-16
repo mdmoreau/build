@@ -14,6 +14,8 @@ module.exports = {
     inlineSvg({
       path: 'img',
     }),
-    csso(),
+    csso({
+      comments: false,
+    }),
   ],
 };
