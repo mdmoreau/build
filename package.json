@@ -14,7 +14,8 @@
   "browserslist": [
     "> 0.5%",
     "last 2 versions",
-    "Firefox ESR"
+    "Firefox ESR",
+    "not dead"
   ],
   "stylelint": {
     "extends": "stylelint-config-standard",
