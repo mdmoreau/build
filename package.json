@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "webpack": "webpack",
-    "postcss": "postcss \"src/css/*.css\" --dir \"dist/css\" --ext \".min.css\" --no-map --verbose --watch",
+    "postcss": "postcss \"src/css/*.css\" --dir \"dist/css\" --ext \".min.css\" --config \"config/postcss.config.js\" --no-map --verbose --watch",
     "svgo": "svgo \"img\" --disable removeViewBox --enable removeDimensions --multipass",
     "stylelint": "stylelint \"src/css/**/*.css\"",
     "eslint": "eslint \"src/js/**/*.js\"",
