@@ -25,6 +25,10 @@ const configs = globby.sync('src/js/*.js').map(inputFile => ({
     }),
     uglify(),
   ],
+  watch: {
+    chokidar: false,
+    clearScreen: false,
+  },
 }));
 
 module.exports = configs;
