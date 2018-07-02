@@ -33,6 +33,11 @@ textarea {
   color: inherit;
 }
 
+::placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
 [data-whatintent='mouse'] :focus,
 [data-whatintent='touch'] :focus {
   outline: 0;
