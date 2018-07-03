@@ -1,9 +1,8 @@
-/* dependencies */
-@import 'normalize.css';
-
 /* utilities */
 @import 'util/variables';
 @import 'util/base';
-@import 'util/svg';
 @import 'util/typography';
-@import 'util/video';
+
+/* modules */
+@import 'modules/svg';
+@import 'modules/video';
