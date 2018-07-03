@@ -9,4 +9,26 @@
   --transition-duration: 300ms;
   --transition-easing: ease;
   --transition: var(--transition-duration) var(--transition-easing);
+
+  /* clear */
+  --clear: {
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+
+  /* hide */
+  --hide: {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
 }
