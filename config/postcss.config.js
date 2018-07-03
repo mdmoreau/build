@@ -7,7 +7,10 @@ module.exports = {
   plugins: [
     atImport(),
     presetEnv({
-      stage: 0,
+      features: {
+        'custom-media-queries': true,
+        'nesting-rules': true,
+      },
     }),
     inlineSvg({
       path: 'img',
