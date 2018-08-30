@@ -15,12 +15,14 @@ const configs = globby.sync('src/js/*.js').map(inputFile => ({
     resolve(),
     commonjs(),
     babel({
-      exclude: 'node_modules/**',
+      include: 'src/js/**',
       presets: [
-        ['@babel/preset-env', {
-          modules: false,
-          useBuiltIns: 'usage',
-        }],
+        [
+          '@babel/preset-env',
+          {
+            useBuiltIns: 'usage',
+          },
+        ],
       ],
     }),
     uglify(),
