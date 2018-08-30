@@ -17,12 +17,7 @@ const configs = globby.sync('src/js/*.js').map(inputFile => ({
     babel({
       include: 'src/js/**',
       presets: [
-        [
-          '@babel/preset-env',
-          {
-            useBuiltIns: 'usage',
-          },
-        ],
+        ['@babel/preset-env', { useBuiltIns: 'usage' }],
       ],
     }),
     uglify(),
