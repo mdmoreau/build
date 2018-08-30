@@ -18,8 +18,8 @@
   white-space: nowrap;
 }
 
-@define-mixin svg-add $name, $width, $height {
+@define-mixin svg-add $name {
   .svg--$(name)::before {
-    padding-top: calc($height / $width * 100%);
+    padding-top: calc(strip(height('$name.svg')) / strip(width('$name.svg')) * 100%);
   }
 }
