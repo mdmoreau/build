@@ -1,5 +1,5 @@
 const atImport = require('postcss-import');
-const atApply = require('postcss-apply');
+const mixins = require('postcss-mixins');
 const presetEnv = require('postcss-preset-env');
 const inlineSvg = require('postcss-inline-svg');
 const clean = require('postcss-clean');
@@ -7,7 +7,7 @@ const clean = require('postcss-clean');
 module.exports = {
   plugins: [
     atImport(),
-    atApply(),
+    mixins(),
     presetEnv({
       features: {
         'custom-media-queries': true,
