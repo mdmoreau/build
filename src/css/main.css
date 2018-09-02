@@ -4,6 +4,6 @@
 @import 'util/base';
 @import 'util/typography';
 
-/* modules */
-@import 'modules/svg';
-@import 'modules/video';
+/* components */
+@import 'components/svg';
+@import 'components/video';
