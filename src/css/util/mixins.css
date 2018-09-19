@@ -1,9 +1,21 @@
+@define-mixin add-svg $name {
+  .svg--$(name)::before {
+    padding-top: calc(strip(height('$name.svg')) / strip(width('$name.svg')) * 100%);
+  }
+}
+
 @define-mixin clear {
   &::after {
     content: '';
     display: block;
     clear: both;
   }
+}
+
+@define-mixin container $max-width: 90rem {
+  max-width: $max-width;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @define-mixin hide {
@@ -18,8 +30,12 @@
   white-space: nowrap;
 }
 
-@define-mixin add-svg $name {
-  .svg--$(name)::before {
-    padding-top: calc(strip(height('$name.svg')) / strip(width('$name.svg')) * 100%);
+@define-mixin zero {
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
   }
 }
