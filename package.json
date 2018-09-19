@@ -8,8 +8,8 @@
     "browsersync": "browser-sync start --config \"config/browsersync.config.js\"",
     "dev": "npm run clean && run-p postcss rollup browsersync",
     "svgo": "svgo \"img\" --disable removeViewBox --enable removeDimensions --multipass",
-    "stylelint": "stylelint \"src/css/**/*.css\"",
-    "eslint": "eslint \"src/js/**/*.js\"",
+    "stylelint": "stylelint \"**/*.css\"",
+    "eslint": "eslint \"**/*.js\"",
     "lint": "run-s stylelint eslint"
   },
   "browserslist": [
@@ -30,14 +30,30 @@
           ]
         }
       ]
-    }
+    },
+    "ignoreFiles": [
+      "dist/**/*"
+    ]
   },
   "eslintConfig": {
     "extends": "eslint-config-airbnb-base",
+    "rules": {
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "config/**/*"
+          ]
+        }
+      ]
+    },
     "env": {
       "browser": true
     }
   },
+  "eslintIgnore": [
+    "dist/**/*"
+  ],
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "focus-within": "^2.0.0",
