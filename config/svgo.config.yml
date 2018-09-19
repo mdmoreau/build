@@ -1,0 +1,7 @@
+multipass: true
+
+plugins:
+  - inlineStyles:
+      onlyMatchedOnce: false
+  - removeViewBox: false
+  - removeDimensions: true

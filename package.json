@@ -7,7 +7,7 @@
     "rollup": "rollup --config \"config/rollup.config.js\" --watch",
     "browsersync": "browser-sync start --config \"config/browsersync.config.js\"",
     "dev": "npm run clean && run-p postcss rollup browsersync",
-    "svgo": "svgo \"img\" --disable removeViewBox --enable removeDimensions --multipass",
+    "svgo": "svgo \"img\" --config \"config/svgo.config.yml\"",
     "stylelint": "stylelint \"**/*.css\"",
     "eslint": "eslint \"**/*.js\"",
     "lint": "run-s stylelint eslint"
