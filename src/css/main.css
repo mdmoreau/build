@@ -6,7 +6,7 @@
 @import 'util/mixins';
 @import 'util/base';
 @import 'util/typography';
+@import 'util/svg';
+@import 'util/video';
 
 /* components */
-@import 'components/svg';
-@import 'components/video';
