@@ -23,12 +23,6 @@ module.exports = {
       loadPaths: ['img'],
     }),
     stripUnits(),
-    clean({
-      level: {
-        1: {
-          specialComments: 0,
-        },
-      },
-    }),
+    clean(),
   ],
 };
