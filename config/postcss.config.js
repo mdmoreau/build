@@ -6,7 +6,7 @@ const assets = require('postcss-assets');
 const stripUnits = require('postcss-strip-units');
 const clean = require('postcss-clean');
 
-module.exports = {
+module.exports = ctx => ({
   plugins: [
     atImport(),
     mixins(),
@@ -23,6 +23,6 @@ module.exports = {
       loadPaths: ['img'],
     }),
     stripUnits(),
-    clean(),
+    ctx.env === 'production' ? clean() : null,
   ],
-};
+});
