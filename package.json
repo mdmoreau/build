@@ -55,23 +55,23 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
+    "@babel/polyfill": "^7.2.5",
     "focus-within": "^3.0.2",
     "normalize.css": "^8.0.0",
     "what-input": "^5.1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "babel-loader": "^8.0.4",
     "browser-sync": "^2.24.7",
-    "eslint": "^5.6.0",
+    "eslint": "^5.11.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "npm-run-all": "^4.1.3",
     "postcss-assets": "^5.0.0",
     "postcss-clean": "^1.1.0",
-    "postcss-cli": "^6.0.0",
+    "postcss-cli": "^6.1.0",
     "postcss-import": "^12.0.0",
     "postcss-inline-svg": "^3.1.1",
     "postcss-mixins": "^6.2.0",
@@ -81,7 +81,7 @@
     "stylelint": "^9.5.0",
     "stylelint-config-standard": "^18.2.0",
     "svgo": "^1.1.1",
-    "webpack": "^4.27.1",
+    "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2"
   }
 }
