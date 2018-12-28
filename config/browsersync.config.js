@@ -1,3 +1,5 @@
+const compression = require('compression');
+
 module.exports = {
   files: [
     'index.html',
@@ -10,6 +12,9 @@ module.exports = {
     'addDir',
     'unlinkDir',
   ],
-  server: true,
+  server: {
+    baseDir: '.',
+    middleware: compression(),
+  },
   open: 'ui',
 };
