@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "clean": "rimraf dist && mkdir dist",
-    "postcss": "postcss \"src/css/*.css\" --dir dist/css --ext .min.css --config config --no-map --verbose --watch",
+    "postcss": "postcss \"src/css/*.css\" --dir dist/css --config config --no-map --verbose --watch",
     "webpack": "webpack --config config/webpack.config.js --watch",
     "browsersync": "browser-sync start --config config/browsersync.config.js",
     "dev": "npm run clean && run-p postcss webpack browsersync",
