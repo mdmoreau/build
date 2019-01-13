@@ -33,6 +33,10 @@ textarea {
   color: inherit;
 }
 
+[type='search'] {
+  appearance: none;
+}
+
 ::placeholder {
   color: inherit;
   opacity: 1;

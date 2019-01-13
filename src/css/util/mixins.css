@@ -1,9 +1,3 @@
-@define-mixin add-svg $name {
-  .svg--$(name)::before {
-    padding-top: calc(strip(height('$name.svg')) / strip(width('$name.svg')) * 100%);
-  }
-}
-
 @define-mixin clear {
   &::after {
     content: '';
@@ -13,6 +7,7 @@
 }
 
 @define-mixin container $max-width: 90rem {
+  width: 100%;
   max-width: $max-width;
   margin-right: auto;
   margin-left: auto;
