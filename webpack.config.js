@@ -87,7 +87,9 @@ const config = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin('dist'),
+    new CleanWebpackPlugin({
+      cleanStaleWebpackAssets: false,
+    }),
     new HtmlWebpackPlugin({
       template: 'src/hbs/index.hbs',
       filename: 'index.html',
