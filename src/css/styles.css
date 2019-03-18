@@ -5,7 +5,6 @@
 @import 'util/variables';
 @import 'util/mixins';
 @import 'util/base';
-@import 'util/typography';
 @import 'util/helpers';
 
 /* components */

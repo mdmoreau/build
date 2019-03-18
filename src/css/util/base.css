@@ -6,7 +6,12 @@
 
 html {
   box-sizing: border-box;
+}
+
+body {
   word-wrap: break-word;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 iframe {
