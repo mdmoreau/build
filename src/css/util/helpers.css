@@ -30,3 +30,7 @@
     padding-top: 56.25%;
   }
 }
+
+.screen-reader-text {
+  @mixin hide;
+}
