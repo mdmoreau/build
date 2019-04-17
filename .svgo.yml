@@ -1,9 +1,6 @@
 multipass: true
 
 plugins:
-  - cleanupIDs:
-      minify: false
-  - inlineStyles:
-      onlyMatchedOnce: false
+  - prefixIds: true
   - removeViewBox: false
   - removeDimensions: true
