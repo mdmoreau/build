@@ -10,7 +10,7 @@
     "deploy": "npm run build && gh-pages --dist dist"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
+    "core-js": "^3.0.1",
     "focus-within": "^3.0.2",
     "normalize.css": "^8.0.1",
     "what-input": "^5.2.1"
