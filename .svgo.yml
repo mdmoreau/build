@@ -1,6 +1,0 @@
-multipass: true
-
-plugins:
-  - prefixIds: true
-  - removeViewBox: false
-  - removeDimensions: true
