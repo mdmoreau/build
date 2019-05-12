@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
-    "svgo": "svgo img --multipass --disable removeViewBox --enable prefixIds --enable removeDimensions",
+    "svgo": "svgo img --config '{\"multipass\":true,\"plugins\":[{\"cleanupIDs\":{\"minify\":false}},{\"removeViewBox\":false},{\"removeDimensions\":true}]}'",
     "stylelint": "stylelint \"**/*.css\"",
     "eslint": "eslint \"**/*.js\"",
     "deploy": "npm run build && gh-pages --dist dist"
