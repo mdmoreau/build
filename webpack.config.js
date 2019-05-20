@@ -14,8 +14,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
-const compression = require('compression');
-
 const config = {
   entry: {
     styles: './src/css/styles.css',
@@ -107,10 +105,7 @@ const config = {
     }),
     new CopyWebpackPlugin(),
     new BrowserSyncPlugin({
-      server: {
-        baseDir: 'dist',
-        middleware: compression(),
-      },
+      server: 'dist',
       open: 'ui',
     }, {
       injectCss: true,
