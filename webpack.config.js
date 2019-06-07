@@ -6,7 +6,7 @@ const postcssColorModFunction = require('postcss-color-mod-function');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssInlineSvg = require('postcss-inline-svg');
 
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
