@@ -11,7 +11,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const config = {
@@ -103,7 +103,7 @@ const config = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),
-    new CopyWebpackPlugin(),
+    // new CopyWebpackPlugin(),
     new BrowserSyncPlugin({
       server: 'dist',
       open: 'ui',
