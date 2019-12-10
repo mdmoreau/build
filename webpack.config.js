@@ -3,7 +3,6 @@ const path = require('path');
 const postcssImport = require('postcss-import');
 const postcssMixins = require('postcss-mixins');
 const postcssPresetEnv = require('postcss-preset-env');
-const postcssInlineSvg = require('postcss-inline-svg');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -63,9 +62,6 @@ const config = {
                     'custom-media-queries': true,
                     'nesting-rules': true,
                   },
-                }),
-                postcssInlineSvg({
-                  paths: ['img'],
                 }),
               ],
             },
