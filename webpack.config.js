@@ -2,7 +2,6 @@ const path = require('path');
 
 const postcssImport = require('postcss-import');
 const postcssMixins = require('postcss-mixins');
-const postcssColorModFunction = require('postcss-color-mod-function');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssInlineSvg = require('postcss-inline-svg');
 
@@ -59,7 +58,6 @@ const config = {
               plugins: () => [
                 postcssImport(),
                 postcssMixins(),
-                postcssColorModFunction(),
                 postcssPresetEnv({
                   features: {
                     'custom-media-queries': true,
