@@ -47,7 +47,6 @@ textarea {
   opacity: 1;
 }
 
-[data-whatintent='mouse'] :focus,
-[data-whatintent='touch'] :focus {
+:focus:not(:focus-visible) {
   outline: 0;
 }
