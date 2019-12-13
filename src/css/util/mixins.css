@@ -6,9 +6,9 @@
   }
 }
 
-@define-mixin container $max-width: 90rem {
+@define-mixin container {
   width: 100%;
-  max-width: $max-width;
+  max-width: 90rem;
   margin-right: auto;
   margin-left: auto;
 }
