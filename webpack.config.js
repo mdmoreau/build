@@ -147,7 +147,7 @@ const config = {
 
 module.exports = (env, argv) => {
   if (argv.mode === 'production' || !argv.mode) {
-    config.plugins.push(new OptimizeCssAssetsPlugin());
+    config.plugins.push(new OptimizeCssAssetsPlugin({ cssProcessorPluginOptions: { preset: ['default', { mergeRules: false }] } }));
   }
   return config;
 };
