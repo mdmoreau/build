@@ -45,7 +45,7 @@
 - Write the contents of an SVG inline using `icon` as the filename without extension and `class` as an optional class attribute value on the container
 
 ### Handlebars
-- Inline the SVG directly on the page
+- Inline the SVG directly
 
 ```handlebars
 {{{ inline-svg 'icon' 'class' }}}
@@ -61,12 +61,12 @@ const svg = inlineSVG('icon', 'class');
 ```
 
 ### CSS
-- Add new styles to `src/css/util/helpers.css` if SVG proportions don't match the default of 1:1
+- Add new styles to `src/css/util/helpers.css` if SVG aspect ratio doesn't match the default of 1:1
 
 ```css
 .svg--icon {
   &::before {
-    padding-top: 50%;
+    padding-top: 50%; /* 2:1 aspect ratio */
   }
 }
 ```
