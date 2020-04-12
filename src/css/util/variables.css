@@ -1,4 +1,4 @@
-/* breakpoints */
+/* custom media queries */
 @custom-media --sm (width >= 32em);
 @custom-media --md (width >= 48em);
 @custom-media --lg (width >= 64em);
