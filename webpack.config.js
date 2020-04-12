@@ -89,6 +89,7 @@ const config = {
                 postcssPresetEnv({
                   features: {
                     'custom-media-queries': true,
+                    'custom-selectors': true,
                     'nesting-rules': true,
                   },
                 }),
