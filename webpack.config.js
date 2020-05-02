@@ -119,10 +119,10 @@ const config = {
     new CleanWebpackPlugin({
       cleanStaleWebpackAssets: false,
     }),
-    new HtmlWebpackPlugin({
-      template: 'src/hbs/index.hbs',
-      filename: 'index.html',
-    }),
+    ...(['index'].map((file) => new HtmlWebpackPlugin({
+      template: `src/hbs/${file}.hbs`,
+      filename: `${file}.html`,
+    }))),
     new CopyWebpackPlugin([
       {
         from: 'src/img',
