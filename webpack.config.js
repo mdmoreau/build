@@ -123,12 +123,14 @@ const config = {
       template: `src/hbs/${file}.hbs`,
       filename: `${file}.html`,
     }))),
-    new CopyWebpackPlugin([
-      {
-        from: 'src/img',
-        to: 'img',
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/img',
+          to: 'img',
+        },
+      ],
+    }),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/,
       svgo,
