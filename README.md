@@ -36,7 +36,7 @@
 - [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
 
 ## ESLint
-- [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base)
+- [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 
 ## Images
 - Store images within `src/img` to have them optimized and available to build process tools
