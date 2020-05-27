@@ -15,7 +15,7 @@
 
 ### Development
 - Watch files and rebuild on change by running `npm run dev` from the project root
-- Launches a local server that automatically reloads and syncs connected browsers
+- Launches a local server that automatically reloads connected browsers
 
 ### Production
 - Create an optimized build by running `npm run build` from the project root

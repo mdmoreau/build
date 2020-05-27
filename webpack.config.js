@@ -11,7 +11,6 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const svgo = {
   multipass: true,
@@ -34,6 +33,13 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
+  },
+  devServer: {
+    hot: true,
+    open: true,
+    before(app, server) {
+      server._watch('src/hbs/**/*'); // eslint-disable-line
+    },
   },
   module: {
     rules: [
@@ -71,7 +77,12 @@ const config = {
       {
         test: /\.css$/,
         use: [
-          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: true,
+            },
+          },
           {
             loader: 'css-loader',
             options: {
@@ -140,17 +151,11 @@ const config = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),
-    new BrowserSyncPlugin({
-      server: 'dist',
-      open: 'ui',
-    }, {
-      injectCss: true,
-    }),
   ],
 };
 
 module.exports = (env, argv) => {
-  if (argv.mode === 'production' || !argv.mode) {
+  if (argv.mode === 'production') {
     config.plugins.push(new OptimizeCssAssetsPlugin({ cssProcessorPluginOptions: { preset: ['default', { mergeRules: false }] } }));
   }
   return config;
