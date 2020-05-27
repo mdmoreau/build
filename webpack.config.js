@@ -8,7 +8,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -28,8 +27,7 @@ const svgo = {
 const config = {
   mode: 'development',
   entry: {
-    styles: './src/css/styles.css',
-    scripts: './src/js/scripts.js',
+    main: ['./src/css/main.css', './src/js/main.js'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -148,7 +146,6 @@ const config = {
       test: /\.(jpe?g|png|gif|svg)$/,
       svgo,
     }),
-    new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),
