@@ -26,6 +26,7 @@ const svgo = {
 };
 
 const config = {
+  mode: 'development',
   entry: {
     styles: './src/css/styles.css',
     scripts: './src/js/scripts.js',
