@@ -2,7 +2,7 @@
   "name": "build",
   "version": "0.1.0",
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "stylelint": "stylelint \"**/*.css\"",
     "eslint": "eslint \"**/*.js\"",
