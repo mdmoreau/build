@@ -110,7 +110,7 @@ const config = {
         ],
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         include: /src\/js/,
         use: {
           loader: 'babel-loader',
@@ -152,6 +152,9 @@ const config = {
       filename: 'css/[name].css',
     }),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 };
 
 module.exports = (env, argv) => {
