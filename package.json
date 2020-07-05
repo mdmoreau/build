@@ -5,7 +5,7 @@
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "stylelint": "stylelint \"**/*.css\"",
-    "eslint": "eslint \"**/*.js\"",
+    "eslint": "eslint \"**/*.{js,jsx}\"",
     "deploy": "npm run build && gh-pages --dist dist"
   },
   "stylelint": {
