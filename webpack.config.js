@@ -1,9 +1,5 @@
 const path = require('path');
 
-const postcssImport = require('postcss-import');
-const postcssMixins = require('postcss-mixins');
-const postcssPresetEnv = require('postcss-preset-env');
-
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -93,18 +89,19 @@ const config = {
           {
             loader: 'postcss-loader',
             options: {
-              ident: 'postcss',
-              plugins: () => [
-                postcssImport(),
-                postcssMixins(),
-                postcssPresetEnv({
-                  features: {
-                    'custom-media-queries': true,
-                    'custom-selectors': true,
-                    'nesting-rules': true,
-                  },
-                }),
-              ],
+              postcssOptions: {
+                plugins: [
+                  'postcss-import',
+                  'postcss-mixins',
+                  ['postcss-preset-env', {
+                    features: {
+                      'custom-media-queries': true,
+                      'custom-selectors': true,
+                      'nesting-rules': true,
+                    },
+                  }],
+                ],
+              },
             },
           },
         ],
