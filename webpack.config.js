@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const host = 'site.localhost';
 
@@ -76,9 +76,6 @@ const config = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: true,
-            },
           },
           {
             loader: 'css-loader',
@@ -125,6 +122,9 @@ const config = {
       },
     ],
   },
+  optimization: {
+    minimizer: ['...', new CssMinimizerPlugin({ minimizerOptions: { preset: ['default', { mergeRules: false }] } })],
+  },
   plugins: [
     new CleanWebpackPlugin({
       cleanStaleWebpackAssets: false,
@@ -155,9 +155,4 @@ const config = {
   },
 };
 
-module.exports = (env, argv) => {
-  if (argv.mode === 'production') {
-    config.plugins.push(new OptimizeCssAssetsPlugin({ cssProcessorPluginOptions: { preset: ['default', { mergeRules: false }] } }));
-  }
-  return config;
-};
+module.exports = config;
