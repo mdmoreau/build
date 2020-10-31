@@ -126,9 +126,6 @@ const config = {
     minimizer: ['...', new CssMinimizerPlugin({ minimizerOptions: { preset: ['default', { mergeRules: false }] } })],
   },
   plugins: [
-    new CleanWebpackPlugin({
-      cleanStaleWebpackAssets: false,
-    }),
     ...(['index'].map((file) => new HtmlWebpackPlugin({
       template: `src/hbs/${file}.hbs`,
       filename: `${file}.html`,
@@ -155,4 +152,9 @@ const config = {
   },
 };
 
-module.exports = config;
+module.exports = (env, argv) => {
+  if (argv.mode === 'production') {
+    config.plugins.push(new CleanWebpackPlugin());
+  }
+  return config;
+};
