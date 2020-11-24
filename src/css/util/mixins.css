@@ -6,13 +6,6 @@
   }
 }
 
-@define-mixin container {
-  width: 100%;
-  max-width: 80rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 @define-mixin hide {
   &:not(:focus, :active) {
     position: absolute;
@@ -33,4 +26,18 @@
   & > :last-child {
     margin-bottom: 0;
   }
+}
+
+@define-mixin container $width: 80rem {
+  width: 100%;
+  max-width: $width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@define-mixin inline-svg $img, $fill: black, $size: contain {
+  background-image: svg-load('$img.svg', fill: $fill);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: $size;
 }

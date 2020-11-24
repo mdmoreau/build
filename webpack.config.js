@@ -91,12 +91,16 @@ const config = {
                 plugins: [
                   'postcss-import',
                   'postcss-mixins',
+                  'postcss-simple-vars',
                   ['postcss-preset-env', {
                     features: {
                       'custom-media-queries': true,
                       'custom-selectors': true,
                       'nesting-rules': true,
                     },
+                  }],
+                  ['postcss-inline-svg', {
+                    paths: ['src/img'],
                   }],
                 ],
               },
