@@ -25,11 +25,9 @@
 - Store [partials](https://handlebarsjs.com/guide/partials.html) within `src/hbs/layouts` and `src/hbs/components`
 
 ## PostCSS
-- [postcss-import](https://github.com/postcss/postcss-import)
+- [postcss-advanced-variables](https://github.com/jonathantneal/postcss-advanced-variables)
 - [postcss-inline-svg](https://github.com/TrySound/postcss-inline-svg)
-- [postcss-mixins](https://github.com/postcss/postcss-mixins)
 - [postcss-preset-env](https://preset-env.cssdb.org/)
-- [postcss-simple-vars](https://github.com/postcss/postcss-simple-vars)
 
 ## Babel
 - [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env)
