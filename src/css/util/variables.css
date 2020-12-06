@@ -3,10 +3,3 @@
 @custom-media --md (width >= 48em);
 @custom-media --lg (width >= 64em);
 @custom-media --xl (width >= 80em);
-
-:root {
-  /* transitions */
-  --transition-duration: 300ms;
-  --transition-easing: ease;
-  --transition: var(--transition-duration) var(--transition-easing);
-}
