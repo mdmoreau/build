@@ -125,7 +125,7 @@ const config = {
     ],
   },
   optimization: {
-    minimizer: ['...', new CssMinimizerPlugin({ minimizerOptions: { preset: ['default', { mergeRules: false }] } })],
+    minimizer: ['...', new CssMinimizerPlugin({ minimizerOptions: { preset: ['default', { mergeRules: false, svgo }] } })],
   },
   plugins: [
     ...(['index'].map((file) => new HtmlWebpackPlugin({
