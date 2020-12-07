@@ -1,0 +1,5 @@
+{% macro inline_svg(img, class = '') %}
+  <span class="svg svg--{{ img }} {{ class }}">
+    <img inline src="src/img/{{ img }}.svg">
+  </span>
+{% endmacro %}

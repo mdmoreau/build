@@ -2,6 +2,7 @@ const path = require('path');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -10,7 +11,6 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const host = 'site.localhost';
 
 const svgo = {
-  multipass: true,
   plugins: [
     {
       cleanupIDs: {
@@ -35,26 +35,31 @@ const config = {
     open: true,
     host,
     before: (app, server) => {
-      server._watch('src/hbs/**/*'); // eslint-disable-line
+      server._watch('src/twig/**/*'); // eslint-disable-line
     },
   },
   module: {
     rules: [
       {
-        test: /\.hbs$/,
-        use: {
-          loader: 'handlebars-loader',
-          options: {
-            helperDirs: path.resolve(__dirname, 'src/hbs/util'),
-            partialDirs: [
-              path.resolve(__dirname, 'src/hbs/components'),
-              path.resolve(__dirname, 'src/hbs/layouts'),
-            ],
-            precompileOptions: {
-              explicitPartialContext: true,
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'raw-loader',
+            options: {
+              esModule: false,
             },
           },
-        },
+          {
+            loader: 'twig-html-loader',
+            options: {
+              namespaces: {
+                util: 'src/twig/util',
+                layouts: 'src/twig/layouts',
+                components: 'src/twig/components',
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.svg$/,
@@ -129,9 +134,13 @@ const config = {
   },
   plugins: [
     ...(['index'].map((file) => new HtmlWebpackPlugin({
-      template: `src/hbs/${file}.hbs`,
+      template: `src/twig/${file}.html`,
       filename: `${file}.html`,
     }))),
+    new HtmlWebpackInlineSVGPlugin({
+      runPreEmit: true,
+      svgoConfig: svgo.plugins,
+    }),
     new CopyWebpackPlugin({
       patterns: [
         {

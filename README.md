@@ -2,7 +2,7 @@
 - [Node.js](https://nodejs.org/)
 
 ## Features
-- [Handlebars](https://handlebarsjs.com/)
+- [Twig](https://twig.symfony.com/)
 - [PostCSS](https://postcss.org/)
 - [Babel](https://babeljs.io/)
 - [stylelint](https://stylelint.io/)
@@ -21,8 +21,8 @@
 - Create an optimized build by running `npm run build` from the project root
 - Run before deploying to a production environment
 
-## Handlebars
-- Store [partials](https://handlebarsjs.com/guide/partials.html) within `src/hbs/layouts` and `src/hbs/components`
+## Twig
+- Store partials within `src/twig/layouts` and `src/twig/components`
 
 ## PostCSS
 - [postcss-advanced-variables](https://github.com/jonathantneal/postcss-advanced-variables)
@@ -45,11 +45,11 @@
 ## Inline SVG
 - Write the contents of an SVG inline using `icon` as the filename without extension and `class` as an optional class attribute value on the container
 
-### Handlebars
+### Twig
 - Inline the SVG directly
 
-```handlebars
-{{{ inline-svg 'icon' 'class' }}}
+```twig
+{{ inline_svg('icon', 'class') }}
 ```
 
 ### JavaScript
