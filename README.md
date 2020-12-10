@@ -22,7 +22,7 @@
 - Run before deploying to a production environment
 
 ## Twig
-- Store partials within `src/twig/layouts` and `src/twig/components`
+- Store partials within `src/html/layouts` and `src/html/components`
 
 ## PostCSS
 - [postcss-advanced-variables](https://github.com/jonathantneal/postcss-advanced-variables)

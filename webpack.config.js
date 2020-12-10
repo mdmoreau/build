@@ -35,7 +35,7 @@ const config = {
     open: true,
     host,
     before: (app, server) => {
-      server._watch('src/twig/**/*'); // eslint-disable-line
+      server._watch('src/html/**/*'); // eslint-disable-line
     },
   },
   module: {
@@ -53,9 +53,9 @@ const config = {
             loader: 'twig-html-loader',
             options: {
               namespaces: {
-                util: 'src/twig/util',
-                layouts: 'src/twig/layouts',
-                components: 'src/twig/components',
+                util: 'src/html/util',
+                layouts: 'src/html/layouts',
+                components: 'src/html/components',
               },
             },
           },
@@ -134,7 +134,7 @@ const config = {
   },
   plugins: [
     ...(['index'].map((file) => new HtmlWebpackPlugin({
-      template: `src/twig/${file}.html`,
+      template: `src/html/${file}.html`,
       filename: `${file}.html`,
     }))),
     new HtmlWebpackInlineSVGPlugin({
