@@ -9,6 +9,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const host = 'site.localhost';
+const pages = ['index'];
 
 const svgo = {
   plugins: [
@@ -135,9 +136,9 @@ const config = {
     minimizer: ['...', new CssMinimizerPlugin({ minimizerOptions: { preset: ['default', { svgo }] } })],
   },
   plugins: [
-    ...(['index'].map((file) => new HtmlWebpackPlugin({
-      template: `src/html/${file}.html`,
+    ...(pages.map((file) => new HtmlWebpackPlugin({
       filename: `${file}.html`,
+      template: `src/html/${file}.html`,
     }))),
     new HtmlWebpackInlineSVGPlugin({
       runPreEmit: true,
