@@ -1,5 +1,5 @@
 /* dependencies */
-@import '../../node_modules/normalize.css/normalize.css';
+@import 'normalize.css';
 
 /* utilities */
 @import 'util/variables';

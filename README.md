@@ -25,9 +25,10 @@
 - Store partials within `src/html/layouts` and `src/html/components`
 
 ## PostCSS
-- [postcss-advanced-variables](https://github.com/jonathantneal/postcss-advanced-variables)
-- [postcss-inline-svg](https://github.com/TrySound/postcss-inline-svg)
+- [postcss-import](https://github.com/postcss/postcss-import)
+- [postcss-mixins](https://github.com/postcss/postcss-mixins)
 - [postcss-preset-env](https://preset-env.cssdb.org/)
+- [postcss-inline-svg](https://github.com/TrySound/postcss-inline-svg)
 
 ## Babel
 - [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env)

@@ -1,4 +1,4 @@
-@mixin clear {
+@define-mixin clear {
   &::after {
     content: '';
     display: block;
@@ -6,7 +6,7 @@
   }
 }
 
-@mixin hide {
+@define-mixin hide {
   &:not(:focus, :active) {
     position: absolute;
     width: 1px;
@@ -18,7 +18,7 @@
   }
 }
 
-@mixin zero {
+@define-mixin zero {
   & > :first-child {
     margin-top: 0;
   }
@@ -28,14 +28,14 @@
   }
 }
 
-@mixin container($width: 80rem) {
+@define-mixin container $width: 80rem {
   width: 100%;
   max-width: $width;
   margin-right: auto;
   margin-left: auto;
 }
 
-@mixin inline-svg($img, $fill: black, $size: contain) {
+@define-mixin inline-svg $img, $fill: black, $size: contain {
   background-image: svg-load('$img.svg', fill: $fill);
   background-position: center;
   background-repeat: no-repeat;

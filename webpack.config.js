@@ -94,7 +94,8 @@ const config = {
             options: {
               postcssOptions: {
                 plugins: [
-                  'postcss-advanced-variables',
+                  'postcss-import',
+                  'postcss-mixins',
                   ['postcss-preset-env', {
                     features: {
                       'custom-media-queries': true,

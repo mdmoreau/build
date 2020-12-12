@@ -32,5 +32,5 @@
 }
 
 .screen-reader-text {
-  @include hide;
+  @mixin hide;
 }
