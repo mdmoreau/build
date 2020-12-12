@@ -68,6 +68,7 @@
     "postcss-loader": "^4.1.0",
     "postcss-mixins": "^6.2.3",
     "postcss-preset-env": "^6.7.0",
+    "postcss-root-parse-var": "^0.1.0",
     "raw-loader": "^4.0.2",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0",
