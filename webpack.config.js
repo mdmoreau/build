@@ -54,9 +54,15 @@ const config = {
             loader: 'twig-html-loader',
             options: {
               namespaces: {
-                util: 'src/html/util',
                 layouts: 'src/html/layouts',
                 components: 'src/html/components',
+              },
+              functions: {
+                inline_svg: (img, cls = '') => `
+                  <span class="svg svg--${img} ${cls}">
+                    <img inline src="src/img/${img}.svg">
+                  </span>
+                `,
               },
             },
           },
