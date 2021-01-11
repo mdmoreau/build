@@ -159,10 +159,6 @@ const config = {
         },
       ],
     }),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/,
-      svgo,
-    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),
@@ -174,7 +170,8 @@ const config = {
 
 module.exports = (env, argv) => {
   if (argv.mode === 'production') {
-    config.plugins.push(new CleanWebpackPlugin());
+    config.plugins.unshift(new CleanWebpackPlugin());
+    config.plugins.push(new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/, svgo }));
   }
   if (!(env && env.WEBPACK_SERVE)) {
     config.target = ['web', 'es5'];
