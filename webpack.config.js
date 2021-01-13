@@ -54,8 +54,8 @@ const config = {
             loader: 'twig-html-loader',
             options: {
               namespaces: {
-                layouts: 'src/html/layouts',
-                components: 'src/html/components',
+                layouts: path.resolve(__dirname, 'src/html/layouts'),
+                components: path.resolve(__dirname, 'src/html/components'),
               },
               functions: {
                 inline_svg: (img, cls = '') => `
