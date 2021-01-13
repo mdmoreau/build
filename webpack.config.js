@@ -103,7 +103,7 @@ const config = {
                 plugins: [
                   'postcss-import',
                   'postcss-mixins',
-                  'postcss-root-parse-var',
+                  'postcss-root-var',
                   ['postcss-preset-env', {
                     features: {
                       'custom-media-queries': true,
