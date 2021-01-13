@@ -28,6 +28,7 @@
 - [postcss-import](https://github.com/postcss/postcss-import)
 - [postcss-mixins](https://github.com/postcss/postcss-mixins)
 - [postcss-root-var](https://github.com/mdmoreau/postcss-root-var)
+- [postcss-nested](https://github.com/postcss/postcss-nested)
 - [postcss-preset-env](https://preset-env.cssdb.org/)
 - [postcss-inline-svg](https://github.com/TrySound/postcss-inline-svg)
 
