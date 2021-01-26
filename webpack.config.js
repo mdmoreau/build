@@ -2,7 +2,6 @@ const path = require('path');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -57,12 +56,13 @@ const config = {
                 layouts: path.resolve(__dirname, 'src/html/layouts'),
                 components: path.resolve(__dirname, 'src/html/components'),
               },
-              functions: {
-                inline_svg: (img, cls = '') => `
+              extend(Twig) {
+                // eslint-disable-next-line
+                Twig._function.extend('inline_svg', (img, cls = '') => `
                   <span class="svg svg--${img} ${cls}">
-                    <img inline src="src/img/${img}.svg">
+                    ${Twig.functions.source(`./src/img/${img}.svg`)}
                   </span>
-                `,
+                `);
               },
             },
           },
@@ -147,10 +147,6 @@ const config = {
       filename: `${file}.html`,
       template: `src/html/${file}.html`,
     }))),
-    new HtmlWebpackInlineSVGPlugin({
-      runPreEmit: true,
-      svgoConfig: svgo.plugins,
-    }),
     new CopyWebpackPlugin({
       patterns: [
         {
