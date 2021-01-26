@@ -3,24 +3,11 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const host = 'site.localhost';
 const pages = ['index'];
-
-const svgo = {
-  plugins: [
-    {
-      cleanupIDs: {
-        minify: false,
-      },
-    },
-    { removeViewBox: false },
-    { removeDimensions: true },
-  ],
-};
 
 const config = {
   entry: {
@@ -76,10 +63,6 @@ const config = {
             options: {
               esModule: false,
             },
-          },
-          {
-            loader: 'svgo-loader',
-            options: svgo,
           },
         ],
       },
@@ -140,7 +123,7 @@ const config = {
     ],
   },
   optimization: {
-    minimizer: ['...', new CssMinimizerPlugin({ minimizerOptions: { preset: ['default', { svgo }] } })],
+    minimizer: ['...', new CssMinimizerPlugin()],
   },
   plugins: [
     ...(pages.map((file) => new HtmlWebpackPlugin({
@@ -168,7 +151,6 @@ const config = {
 module.exports = (env, argv) => {
   if (argv.mode === 'production') {
     config.plugins.unshift(new CleanWebpackPlugin());
-    config.plugins.push(new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/, svgo }));
   }
   if (!(env && env.WEBPACK_SERVE)) {
     config.target = ['web', 'es5'];
