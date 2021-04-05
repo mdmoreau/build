@@ -22,7 +22,8 @@ const config = {
     open: true,
     host,
     before: (app, server) => {
-      server._watch('src/html/**/*'); // eslint-disable-line
+      // eslint-disable-next-line
+      server._watch('src/html/**/*');
     },
   },
   module: {

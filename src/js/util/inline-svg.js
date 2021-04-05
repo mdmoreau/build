@@ -1,4 +1,5 @@
 export default (img, cls = '') => {
-  const svg = require(`../../img/${img}.svg`); // eslint-disable-line
+  // eslint-disable-next-line
+  const svg = require(`../../img/${img}.svg`);
   return `<span class="svg svg--${img} ${cls}">${svg}</span>`;
 };
