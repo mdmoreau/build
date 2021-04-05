@@ -8,18 +8,6 @@
     "stylelint": "stylelint \"**/*.css\"",
     "eslint": "eslint \"**/*.{js,jsx}\""
   },
-  "eslintConfig": {
-    "extends": [
-      "airbnb",
-      "airbnb/hooks"
-    ],
-    "env": {
-      "browser": true
-    }
-  },
-  "eslintIgnore": [
-    "dist/**/*"
-  ],
   "dependencies": {
     "core-js": "^3.10.0",
     "focus-visible": "^5.2.0",
