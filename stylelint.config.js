@@ -13,5 +13,6 @@ module.exports = {
   },
   ignoreFiles: [
     'dist/**/*',
+    'node_modules/**/*',
   ],
 };
