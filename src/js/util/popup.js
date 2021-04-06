@@ -3,22 +3,59 @@ const popups = document.querySelectorAll('[data-popup]');
 popups.forEach((popup) => {
   const root = document.documentElement;
 
-  const check = (e) => {
-    const content = popup.nextElementSibling;
+  const getFocusable = () => {
+    const all = popup.nextElementSibling.querySelectorAll('button:not([disabled]), [href]:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])');
+    // eslint-disable-next-line
+    const visible = [...all].filter((el) => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length));
+    return visible;
+  };
 
-    if (!popup.contains(e.target) && !content.contains(e.target)) {
-      root.removeEventListener('click', check);
-      popup.setAttribute('aria-expanded', 'false');
+  const focusTrap = (e) => {
+    const focusable = getFocusable();
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && popup === document.activeElement) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && last === document.activeElement) {
+      e.preventDefault();
+      popup.focus();
     }
+  };
+
+  const handleKeydown = (e) => {
+    if (e.keyCode === 9) {
+      focusTrap(e);
+    } else if (e.keyCode === 27) {
+      // eslint-disable-next-line
+      remove();
+    }
+  };
+
+  const handleClick = (e) => {
+    const content = popup.nextElementSibling;
+    if (!popup.contains(e.target) && !content.contains(e.target)) {
+      // eslint-disable-next-line
+      remove();
+    }
+  };
+
+  const add = () => {
+    root.addEventListener('click', handleClick);
+    root.addEventListener('keydown', handleKeydown);
+    popup.setAttribute('aria-expanded', 'true');
+  };
+
+  const remove = () => {
+    root.removeEventListener('click', handleClick);
+    root.removeEventListener('keydown', handleKeydown);
+    popup.setAttribute('aria-expanded', 'false');
   };
 
   popup.addEventListener('click', () => {
     if (popup.getAttribute('aria-expanded') === 'true') {
-      root.removeEventListener('click', check);
-      popup.setAttribute('aria-expanded', 'false');
+      remove();
     } else {
-      root.addEventListener('click', check);
-      popup.setAttribute('aria-expanded', 'true');
+      add();
     }
   });
 });
