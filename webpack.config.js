@@ -26,13 +26,8 @@ const config = {
     rules: [
       {
         test: /\.html$/,
+        type: 'asset/source',
         use: [
-          {
-            loader: 'raw-loader',
-            options: {
-              esModule: false,
-            },
-          },
           {
             loader: 'twig-html-loader',
             options: {
@@ -54,14 +49,7 @@ const config = {
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'raw-loader',
-            options: {
-              esModule: false,
-            },
-          },
-        ],
+        type: 'asset/source',
       },
       {
         test: /\.css$/,
