@@ -1,23 +1,21 @@
-// eslint-disable-next-line
-const { extendDefaultPlugins } = require('svgo');
-
 module.exports = {
   multipass: true,
   js2svg: {
     indent: 2,
     pretty: true,
   },
-  plugins: extendDefaultPlugins([
+  plugins: [
     {
-      name: 'cleanupIDs',
-      active: false,
+      name: 'preset-default',
+      params: {
+        overrides: {
+          cleanupIDs: {
+            minify: false,
+          },
+          removeViewBox: false,
+        },
+      },
     },
-    {
-      name: 'removeViewBox',
-      active: false,
-    },
-    {
-      name: 'removeDimensions',
-    },
-  ]),
+    'removeDimensions',
+  ],
 };
