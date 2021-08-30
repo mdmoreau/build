@@ -18,13 +18,9 @@ const config = {
     filename: 'js/[name].js',
   },
   devServer: {
-    hot: true,
     open: true,
     host,
-    before: (app, server) => {
-      // eslint-disable-next-line
-      server._watch('src/html/**/*');
-    },
+    watchFiles: ['src/html/**/*'],
   },
   module: {
     rules: [
@@ -118,14 +114,12 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  target: ['web', 'es5'],
 };
 
 module.exports = (env, argv) => {
   if (argv.mode === 'production') {
     config.plugins.unshift(new CleanWebpackPlugin());
-  }
-  if (!(env && env.WEBPACK_SERVE)) {
-    config.target = ['web', 'es5'];
   }
   return config;
 };
