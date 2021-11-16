@@ -3,12 +3,11 @@ module.exports = {
     'postcss-import',
     'postcss-mixins',
     'postcss-root-var',
-    'postcss-nested',
     ['postcss-preset-env', {
       features: {
         'custom-media-queries': true,
         'custom-selectors': true,
-        // 'nesting-rules': true,
+        'nesting-rules': { allowDeclarationsAfterNestedRules: true },
       },
     }],
     ['postcss-inline-svg', {
