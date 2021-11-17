@@ -7,7 +7,7 @@ module.exports = {
       features: {
         'custom-media-queries': true,
         'custom-selectors': true,
-        'nesting-rules': { allowDeclarationsAfterNestedRules: true },
+        'nesting-rules': true,
       },
     }],
     ['postcss-inline-svg', {
