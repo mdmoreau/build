@@ -26,7 +26,7 @@ svg {
 }
 
 svg {
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 button,
@@ -39,13 +39,13 @@ textarea {
 }
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   cursor: pointer;
 }
 
-[type='search'] {
+[type="search"] {
   appearance: none;
 }
 
