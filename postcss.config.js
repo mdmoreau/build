@@ -5,7 +5,6 @@ module.exports = {
     'postcss-root-var',
     ['postcss-preset-env', {
       features: {
-        'custom-media-queries': true,
         'custom-selectors': true,
         'nesting-rules': true,
       },
