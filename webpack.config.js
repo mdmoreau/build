@@ -36,8 +36,7 @@ const config = {
                 components: path.resolve(__dirname, 'src/html/components'),
               },
               extend(Twig) {
-                // eslint-disable-next-line
-                Twig._function.extend('inline_svg', (img, cls = '') => `
+                Twig.exports.extendFunction('inline_svg', (img, cls = '') => `
                   <span class="svg svg--${img} ${cls}">
                     ${Twig.functions.source(`./src/img/${img}.svg`)}
                   </span>
