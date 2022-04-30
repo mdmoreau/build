@@ -18,6 +18,7 @@ module.exports = {
         ],
       },
     ],
+    'selector-class-pattern': null,
   },
   ignoreFiles: [
     'dist/**/*',
