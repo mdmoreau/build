@@ -34,10 +34,3 @@
   margin-right: auto;
   margin-left: auto;
 }
-
-@define-mixin inline-svg $img, $fill: black, $size: contain {
-  background-image: svg-load("$img.svg", fill: $fill);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: $size;
-}

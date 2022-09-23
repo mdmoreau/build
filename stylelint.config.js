@@ -10,14 +10,6 @@ module.exports = {
         ],
       },
     ],
-    'function-no-unknown': [
-      true,
-      {
-        ignoreFunctions: [
-          'svg-load',
-        ],
-      },
-    ],
     'selector-class-pattern': null,
   },
   ignoreFiles: [
