@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "core-js": "^3.25.2",
-    "focus-visible": "^5.2.0",
-    "focus-within": "^3.0.2",
     "normalize.css": "^8.0.1",
     "regenerator-runtime": "^0.13.9"
   },
