@@ -21,8 +21,12 @@
 - Create an optimized build by running `npm run build` from the project root
 - Run before deploying to a production environment
 
+## Images
+- Store images within `src/img` to have them available to build process tools
+
 ## Twig
 - Store partials within `src/html/layouts` and `src/html/components`
+- Inline an SVG using `name` as the filename without extension: `{{ inline_svg('name') }}`
 
 ## PostCSS
 - [postcss-import](https://github.com/postcss/postcss-import)
@@ -38,36 +42,3 @@
 
 ## ESLint
 - [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
-
-## Images
-- Store images within `src/img` to have them optimized and available to build process tools
-
-## Inline SVG
-- Write the contents of an SVG inline using `icon` as the filename without extension and `class` as an optional class attribute value on the container
-
-### Twig
-- Inline the SVG directly
-
-```twig
-{{ inline_svg('icon', 'class') }}
-```
-
-### JavaScript
-- Store the SVG as a string
-
-```javascript
-import inlineSVG from '../util/inline-svg';
-
-const svg = inlineSVG('icon', 'class');
-```
-
-### CSS
-- Add new styles to `src/css/util/helpers.css` if SVG aspect ratio doesn't match the default of 1:1
-
-```css
-.svg--icon {
-  &::before {
-    padding-top: 50%; /* 2:1 aspect ratio */
-  }
-}
-```

@@ -36,11 +36,7 @@ const config = {
                 components: path.resolve(__dirname, 'src/html/components'),
               },
               extend(Twig) {
-                Twig.exports.extendFunction('inline_svg', (img, cls = '') => `
-                  <span class="svg svg--${img} ${cls}">
-                    ${Twig.functions.source(`./src/img/${img}.svg`)}
-                  </span>
-                `);
+                Twig.exports.extendFunction('inline_svg', (name) => Twig.functions.source(`./src/img/${name}.svg`));
               },
             },
           },
@@ -81,9 +77,9 @@ const config = {
     minimizer: ['...', new CssMinimizerPlugin()],
   },
   plugins: [
-    ...(pages.map((file) => new HtmlWebpackPlugin({
-      filename: `${file}.html`,
-      template: `src/html/${file}.html`,
+    ...(pages.map((name) => new HtmlWebpackPlugin({
+      filename: `${name}.html`,
+      template: `src/html/${name}.html`,
     }))),
     new CopyWebpackPlugin({
       patterns: [
@@ -101,7 +97,6 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  target: ['web', 'es5'],
 };
 
 module.exports = (env, argv) => {
