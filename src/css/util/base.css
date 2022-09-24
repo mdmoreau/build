@@ -1,41 +1,11 @@
-*,
-::before,
-::after {
-  box-sizing: inherit;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-body {
-  word-wrap: break-word;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-iframe {
-  border: 0;
-}
-
-img,
 svg {
-  display: block;
   max-width: 100%;
   height: auto;
 }
 
-svg {
-  fill: currentcolor;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  border-radius: 0;
-  color: inherit;
+iframe,
+video {
+  aspect-ratio: 16 / 9;
 }
 
 button,
@@ -45,13 +15,8 @@ button,
   cursor: pointer;
 }
 
-[type="search"] {
-  appearance: none;
-}
-
-::placeholder {
-  color: inherit;
-  opacity: 1;
+select {
+  text-overflow: ellipsis;
 }
 
 :focus:not(:focus-visible) {
