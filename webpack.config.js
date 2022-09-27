@@ -1,8 +1,8 @@
 const path = require('path');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
@@ -16,11 +16,6 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
-  },
-  devServer: {
-    open: true,
-    host,
-    watchFiles: ['src/html/**/*'],
   },
   module: {
     rules: [
@@ -73,14 +68,15 @@ const config = {
       },
     ],
   },
-  optimization: {
-    minimizer: ['...', new CssMinimizerPlugin()],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  devServer: {
+    open: true,
+    host,
+    watchFiles: ['src/html/**/*'],
   },
   plugins: [
-    ...(pages.map((name) => new HtmlWebpackPlugin({
-      filename: `${name}.html`,
-      template: `src/html/${name}.html`,
-    }))),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -90,12 +86,16 @@ const config = {
         },
       ],
     }),
+    ...(pages.map((name) => new HtmlWebpackPlugin({
+      filename: `${name}.html`,
+      template: `src/html/${name}.html`,
+    }))),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),
   ],
-  resolve: {
-    extensions: ['.js', '.jsx'],
+  optimization: {
+    minimizer: ['...', new CssMinimizerPlugin()],
   },
 };
 
