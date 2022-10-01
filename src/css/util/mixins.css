@@ -6,13 +6,6 @@
   }
 }
 
-@define-mixin container $width: 80rem {
-  width: $width;
-  max-width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 @define-mixin hide {
   &:not(:focus, :active) {
     position: absolute;

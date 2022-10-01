@@ -1,4 +1,10 @@
-svg {
+iframe,
+img,
+input,
+video,
+select,
+svg,
+textarea {
   max-width: 100%;
   height: auto;
 }
@@ -9,14 +15,27 @@ video {
 }
 
 button,
+input,
+select,
+textarea {
+  padding: 0.25em 0.375em;
+  border: 1px solid;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-overflow: ellipsis;
+}
+
+button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
   cursor: pointer;
 }
 
-select {
-  text-overflow: ellipsis;
+[type="search"] {
+  background-color: field;
 }
 
 :focus:not(:focus-visible) {
