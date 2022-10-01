@@ -3,8 +3,8 @@ const toggles = document.querySelectorAll('[data-toggle]');
 toggles.forEach((toggle) => {
   const type = toggle.getAttribute('data-toggle');
   const parent = toggle.closest('[data-toggle-group]');
-  const group = parent?.querySelectorAll('[data-toggle="group"]');
-  const children = [...group ?? []].filter((item) => item.closest('[data-toggle-group]') === parent);
+  const ancestors = parent?.querySelectorAll('[data-toggle="group"]');
+  const children = [...ancestors ?? []].filter((item) => item.closest('[data-toggle-group]') === parent);
 
   if (!toggle.hasAttribute('aria-expanded')) {
     toggle.setAttribute('aria-expanded', false);
