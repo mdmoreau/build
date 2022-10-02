@@ -21,6 +21,7 @@ textarea {
   padding: 0.25em 0.375em;
   border: 1px solid;
   border-radius: 0;
+  background-color: field;
   color: inherit;
   font: inherit;
   letter-spacing: inherit;
@@ -32,10 +33,6 @@ button,
 [type="reset"],
 [type="submit"] {
   cursor: pointer;
-}
-
-[type="search"] {
-  background-color: field;
 }
 
 :focus:not(:focus-visible) {
