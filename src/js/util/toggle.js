@@ -2,9 +2,9 @@ const toggles = document.querySelectorAll('[data-toggle]');
 
 toggles.forEach((toggle) => {
   const type = toggle.getAttribute('data-toggle');
-  const parent = toggle.closest('[data-toggle-group]');
-  const ancestors = parent?.querySelectorAll('[data-toggle="group"]');
-  const children = [...ancestors ?? []].filter((item) => item.closest('[data-toggle-group]') === parent);
+  const root = toggle.closest('[data-toggle-group]');
+  const items = root?.querySelectorAll('[data-toggle="group"]');
+  const group = [...items ?? []].filter((item) => item.closest('[data-toggle-group]') === root);
 
   if (!toggle.hasAttribute('aria-expanded')) {
     toggle.setAttribute('aria-expanded', false);
@@ -15,9 +15,9 @@ toggles.forEach((toggle) => {
 
     switch (type) {
       case 'group':
-        children.forEach((child) => {
-          expanded = child === toggle;
-          child.setAttribute('aria-expanded', expanded);
+        group.forEach((item) => {
+          expanded = item === toggle;
+          item.setAttribute('aria-expanded', expanded);
         });
         break;
 
