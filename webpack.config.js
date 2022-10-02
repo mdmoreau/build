@@ -31,7 +31,7 @@ const config = {
                 components: path.resolve(__dirname, 'src/html/components'),
               },
               extend(Twig) {
-                Twig.exports.extendFunction('inline_svg', (name) => Twig.functions.source(`./src/img/${name}.svg`));
+                Twig.exports.extendFunction('inline_svg', (name) => Twig.functions.source(`./src/static/img/${name}.svg`));
               },
             },
           },
@@ -80,8 +80,7 @@ const config = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/img',
-          to: 'img',
+          from: 'src/static',
           noErrorOnMissing: true,
         },
       ],

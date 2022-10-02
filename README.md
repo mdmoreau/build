@@ -21,8 +21,9 @@
 - Create an optimized build by running `npm run build` from the project root
 - Run before deploying to a production environment
 
-## Images
-- Store images within `src/img` to have them available to build process tools
+## Static Files
+- The contents of `src/static` will be copied to the build root
+- Store images within `src/static/img` to have them available to build process tools
 
 ## Twig
 - Store partials within `src/html/layouts` and `src/html/components`
