@@ -7,6 +7,7 @@ module.exports = {
         'custom-selectors': true,
         'nesting-rules': true,
       },
+      enableClientSidePolyfills: false,
     }],
   ],
 };
