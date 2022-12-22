@@ -1,6 +1,9 @@
 {
   "name": "build",
   "version": "0.1.0",
+  "browserslist": [
+    "defaults and supports css-math-functions"
+  ],
   "scripts": {
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
