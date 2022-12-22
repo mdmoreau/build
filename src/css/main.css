@@ -1,10 +1,10 @@
 /* dependencies */
-@import "sanitize.css";
+@import url("sanitize.css");
 
 /* utilities */
-@import "util/variables";
-@import "util/mixins";
-@import "util/base";
-@import "util/helpers";
+@import url("util/variables");
+@import url("util/mixins");
+@import url("util/base");
+@import url("util/helpers");
 
 /* components */

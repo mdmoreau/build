@@ -9,7 +9,7 @@ module.exports = {
       name: 'preset-default',
       params: {
         overrides: {
-          cleanupIDs: {
+          cleanupIds: {
             minify: false,
           },
           removeViewBox: false,
