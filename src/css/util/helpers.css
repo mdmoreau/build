@@ -1,3 +1,28 @@
+.clear {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
 .screen-reader-text {
-  @mixin hide;
+  &:not(:focus, :active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+.zero {
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
 }

@@ -1,7 +1,6 @@
 module.exports = {
   plugins: [
     'postcss-import',
-    'postcss-mixins',
     ['postcss-preset-env', {
       features: {
         'custom-selectors': true,

@@ -2,7 +2,7 @@
   "name": "build",
   "version": "0.1.0",
   "browserslist": [
-    "defaults and supports css-math-functions"
+    "defaults and supports es6"
   ],
   "scripts": {
     "dev": "webpack serve --mode development",
@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "core-js": "^3.27.1",
-    "regenerator-runtime": "^0.13.11",
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {
@@ -36,7 +35,6 @@
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
     "postcss-loader": "^7.0.2",
-    "postcss-mixins": "^9.0.4",
     "postcss-preset-env": "^7.8.3",
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^29.0.0",

@@ -31,7 +31,6 @@
 
 ## PostCSS
 - [postcss-import](https://github.com/postcss/postcss-import)
-- [postcss-mixins](https://github.com/postcss/postcss-mixins)
 - [postcss-preset-env](https://preset-env.cssdb.org/)
 
 ## Babel

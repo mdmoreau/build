@@ -2,9 +2,8 @@
 @import url("sanitize.css");
 
 /* utilities */
-@import url("util/variables");
-@import url("util/mixins");
-@import url("util/base");
-@import url("util/helpers");
+@import url("util/variables.css");
+@import url("util/base.css");
+@import url("util/helpers.css");
 
 /* components */
