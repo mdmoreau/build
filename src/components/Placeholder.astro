@@ -1,0 +1,13 @@
+---
+interface Props {
+  id?: number;
+  width: number;
+  height: number;
+}
+
+const { id, width, height } = Astro.props;
+const ids = [...Array(30).keys()];
+const random = () => ids[Math.floor(Math.random() * ids.length)];
+---
+
+<img src={`https://picsum.photos/id/${id||random()}/${width}/${height}`} {width} {height} alt="Placeholder" />

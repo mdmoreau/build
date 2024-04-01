@@ -1,0 +1,86 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+#header,
+#main,
+#footer {
+  container: root / inline-size;
+}
+
+body {
+  margin: 0;
+  text-size-adjust: none;
+  overflow-wrap: break-word;
+}
+
+iframe,
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+iframe,
+video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+svg {
+  fill: currentColor;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+blockquote,
+fieldset,
+figure,
+legend {
+  margin-inline: 0;
+  padding: 0;
+  border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+  text-overflow: ellipsis;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+}
+
+[type="search"] {
+  appearance: none;
+}
+
+::placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+:focus {
+  outline: 0.25rem dashed;
+  outline-offset: 0.25rem;
+
+  &:not(:focus-visible) {
+    outline: 0;
+  }
+}

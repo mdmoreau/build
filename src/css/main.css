@@ -1,9 +1,0 @@
-/* dependencies */
-@import url("sanitize.css");
-
-/* utilities */
-@import url("util/variables.css");
-@import url("util/base.css");
-@import url("util/helpers.css");
-
-/* components */
