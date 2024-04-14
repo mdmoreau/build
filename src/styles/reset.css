@@ -4,9 +4,7 @@
   box-sizing: border-box;
 }
 
-#header,
-#main,
-#footer {
+#root {
   container: root / inline-size;
 }
 
