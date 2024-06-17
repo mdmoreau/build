@@ -11,7 +11,7 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "astro": "^4.8.6",
-    "lightningcss": "^1.25.0"
+    "astro": "^4.10.3",
+    "lightningcss": "^1.25.1"
   }
 }
