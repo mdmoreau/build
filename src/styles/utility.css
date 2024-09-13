@@ -1,14 +1,14 @@
-.flush {
-  & > :first-child {
-    margin-top: 0;
+.mt-block {
+  > :first-child {
+    margin-block-start: 0;
   }
 
-  & > :last-child {
-    margin-bottom: 0;
+  > :last-child {
+    margin-block-end: 0;
   }
 }
 
-.invis {
+.screen-reader-text {
   &:not(:active, :focus, :focus-within) {
     position: absolute;
     width: 1px;
