@@ -1,7 +1,7 @@
 ---
 import '@styles/global.css';
 
-await Astro.glob('../components/*.astro');
+await import.meta.glob('../components/*.astro');
 
 interface Props {
   title: string;
