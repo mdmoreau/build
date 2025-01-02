@@ -8,6 +8,7 @@ interface Props {
 const { id, width, height } = Astro.props;
 const ids = [...Array(30).keys()];
 const random = () => ids[Math.floor(Math.random() * ids.length)];
+const src = `https://picsum.photos/id/${id || random()}/${width}/${height}`;
 ---
 
-<img src={`https://picsum.photos/id/${id||random()}/${width}/${height}`} {width} {height} alt="Placeholder" />
+<img {src} {width} {height} alt="Placeholder" />
