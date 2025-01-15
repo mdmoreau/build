@@ -12,6 +12,6 @@
   },
   "devDependencies": {
     "astro": "^5.1.1",
-    "lightningcss": "^1.28.2"
+    "postcss-nesting": "^13.0.1"
   }
 }

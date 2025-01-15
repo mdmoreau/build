@@ -1,7 +1,8 @@
+import { defineConfig } from 'astro/config';
+
 import fs from 'node:fs';
 import path from 'node:path';
-
-import { defineConfig } from 'astro/config';
+import nesting from 'postcss-nesting';
 
 // https://astro.build/config
 export default defineConfig({
@@ -46,7 +47,9 @@ export default defineConfig({
       }
     },
     css: {
-      transformer: 'lightningcss',
+      postcss: {
+        plugins: [nesting()]
+      }
     }
   }
 });
