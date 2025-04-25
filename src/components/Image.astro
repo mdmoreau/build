@@ -1,0 +1,44 @@
+---
+import Placeholder from './Placeholder.astro';
+
+interface Props {
+  left?: boolean;
+  right?: boolean;
+  center?: boolean;
+  link?: string;
+  width?: number;
+  height?: number;
+  caption?: boolean;
+}
+
+const { left, right, center, link, width = 600, height = 400, caption } = Astro.props;
+---
+
+<figure class:list={[
+  'Image',
+  { 'alignleft': left },
+  { 'alignright': right },
+  { 'aligncenter': center },
+]}>
+  {link ?
+    <a href={link}>
+      <Placeholder {width} {height} />
+    </a>
+  :
+    <Placeholder {width} {height} />
+  }
+  {caption &&
+    <figcaption>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde debitis quo sit architecto? Adipisci, quas quos!</figcaption>
+  }
+</figure>
+
+<style is:global>
+  .Image {
+    display: table;
+
+    figcaption {
+      display: table-caption;
+      caption-side: bottom;
+    }
+  }
+</style>

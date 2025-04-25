@@ -1,0 +1,31 @@
+<style is:global>
+  .Common {
+    display: flow-root;
+
+    .alignleft,
+    .alignright,
+    .aligncenter {
+      @container (width >= 48rem) {
+        max-width: 50%;
+      }
+    }
+
+    .alignleft {
+      @container (width >= 48rem) {
+        float: left;
+      }
+    }
+
+    .alignright {
+      @container (width >= 48rem) {
+        float: right;
+      }
+    }
+
+    .aligncenter {
+      @container (width >= 48rem) {
+        margin-inline: auto;
+      }
+    }
+  }
+</style>
